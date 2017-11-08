@@ -1,0 +1,53 @@
+Answer :
+        Abstract Factory Design Pattern
+        Abstract Factory Design Pattern provides an interface for creating families of related or dependent objects.
+        
+Explanation : 
+        As per the question we assumed that we will have a family of different products, hence Abstract Factory Design Pattern.
+        
+Psedo Code :
+
+        Step 1 :
+        1.extend class TowerPc from PC
+        2.extend class DesktopPC from PC
+        
+        
+        3.define abstract class Chassis
+        class TowerChassis extends Chassis
+        {
+                System.out.println("Tower Chassis");
+        }
+        class DesktopChassis extends Chassis
+        {
+                System.out.println("Desktop Chassis");                
+        }
+        
+        
+        4.define abstract class Cabinet
+        class TowerCabinet extends Cabinet
+        {
+                System.out.println("Tower Cabinet");                                
+        }
+        class DesktopCabinet extends Cabinet
+        {
+                System.out.println("Desktop Cabinet");                               
+        }
+       
+       
+        5.create class that would return the required functionalities as per the product family(i.e separating desktop and tower)
+        class Desktop extends AbstractFactory // factory method
+        {
+                return a function which would give you the details of Desktop Chassis and Desktop Cabinet
+        }
+        class Tower extends AbstractFactory // factory method
+        {
+                return a function which would give you the details of Tower Chassis and Tower Cabinet
+        }
+        
+        6.finally define your AbstractFactory class //client maintains a refrence to this abstract factory calss and also we are not bothered about how the objects are created and returned
+        {
+                instantiate class Desktop and Tower and return the requested object
+        }	
+        
+        
+        7.finally from your client code call your AbstractFactory functionality

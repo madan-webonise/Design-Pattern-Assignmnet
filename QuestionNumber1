@@ -1,0 +1,65 @@
+Answer :
+        Composite Design Pattern
+        Compose objects into tree structures to represent whole-part hierarchies.Composite lets clients treat individual objects and compositions of objects uniformly
+        
+Explanation : 
+        Composite Design Pattern is used whenever we have composites that contains components. (hierarchy)
+        
+Psedo Code :
+
+        Step 1 : 
+        declare an interface   
+        interface Personal_Computer
+        {
+                declare netPrice();
+                declare powerConsumption();
+                
+        }
+        
+        Step 2 :
+        implement the above interface in Class Cabinet
+        class Cabinet implements Personal_Computer
+        {
+                define functions from Personal_Computer Interface
+                define examplefunction2();      //should not be inherited
+        }
+        
+        Step 3 :
+        extend Class Cabinet
+        class Chassis extends Cabinet
+        {
+                override the methods netPrice() and powerConsumption()
+        }
+        
+        Step 4 : 
+        Create the required class i.e Bus,FloppyDiskDrive,MemoryUnit,CPU,PowerSupply and extend the above class
+        
+        class Bus extends Chassis
+        {       
+                override netPrice() //display price of the bus
+                override powerConsumption()//display powerConsumption of bus
+        
+        }
+        class networkcard extends Bus
+        {       
+                override netPrice() //display price of the bus
+                override powerConsumption()//display powerConsumption of bus
+        
+        }
+        Follow the same for other composed classes.
+        Step 5 :
+        get the price and PowerConsumption from the client code
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

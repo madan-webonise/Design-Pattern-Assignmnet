@@ -1,0 +1,34 @@
+Answer :
+        Strategy Design Pattern
+        Strategy Design Pattern lets the algorith vary independently from the clients that use it.
+        
+Explanation : 
+        As per the problem statement we have several algorithms(strategies), and we need to use one out of that, hence strategy design pattern 
+        
+Psedo Code :
+        Step 1:
+        declare the SortingStrategy interface and declare a sort function into it
+        interface SortingStrategy 
+        {
+                declare sort(Array_PerformanceValue);
+        }
+        
+        Step 2:
+        implement the interface for different algorithms
+        
+        class Bubblesort implements SortingStrategy
+        {
+                code for bubble sort    // sort all Pc's considering the performanceValue
+        }
+        
+        Repeat step 2 for different algorithms
+        
+        Step 3:
+        Invoke the strategy in clientcode
+        
+        class InvokeStrategy
+        {
+                SortingStrategy strategy;
+                strategy.sort();
+        }
+        
